@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # class for person data
 class Person
   # class for person data
