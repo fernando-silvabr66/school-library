@@ -48,6 +48,12 @@ or alternatively you can copy and paste the commands in
 
 Give a ⭐️ if you like this project!
 
+## Acknowledgments 🤝
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
 ## 📝 License
 
-This project is [MIT](./LICENSE.md) licensed.
+This project is [MIT](./LICENSE) licensed.
