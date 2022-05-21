@@ -1,7 +1,7 @@
 require './nameable'
 
 # class for person data
-class Person
+class Person < Nameable
   # class for person data
   attr_accessor :name, :age
   attr_reader :id
