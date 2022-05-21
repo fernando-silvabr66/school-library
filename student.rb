@@ -1,14 +1,20 @@
-require_relative './person'
+require './person'
+require './classroom'
 
-# class for student data
 class Student < Person
-  # class for student data
-  def initialize(_classrom, age, name = 'Unknown', parent_permission: true)
+  attr_reader :classroom
+
+  def initialize(age, classroom, name = 'unknown', parent_permission: true)
     super(age, name, parent_permission)
-    @classrom = classroom
+    @classroom = classroom
+  end
+
+  def classroom=(classroom)
+    @classroom = classroom
+    classroom.students << self unless owner.students.include?(self)
   end
 
   def play_hooky
-    "¯\(ツ)/¯"
+    '¯\(ツ)/¯'
   end
 end
