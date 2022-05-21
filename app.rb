@@ -10,11 +10,12 @@ require './teacher'
 require './trimmer_decorator'
 
 class App
-  attr_reader :people, :books
+  attr_reader :people, :books, :rentals
 
   def initialize
     @people = []
     @books = []
+    @rentals = []
   end
 
   def list_people
@@ -95,17 +96,23 @@ class App
     person_index = gets.chomp.to_i - 1
     print 'Date: '
     date = gets.chomp
-    Rental.new(date, @books[book_index], @people[person_index])
+    new_rental = Rental.new(date, @books[book_index], @people[person_index])
+    @rentals << new_rental
     puts 'Rental created successfully'
   end
 
   def list_persons_rentals
-    print 'ID of person: '
-    id = gets.chomp
-    puts 'Rentals:'
-    person = @people.select { @id = id }
-    person[0].rentals.each do |rental|
-      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
+    if @rentals.empty?
+      puts
+      puts 'No rentals in system.'
+    else
+      print 'ID of person: '
+      id = gets.chomp
+      puts 'Rentals:'
+      person = @people.select { @id = id }
+      person[0].rentals.each do |rental|
+        puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
+      end
     end
   end
 end
