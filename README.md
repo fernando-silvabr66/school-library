@@ -27,7 +27,7 @@ Module 4 - Week 3 - Microverse - Full-Stack Web Development
 In the project directory, you can run:
 
 ```bash
-#### > ruby <<< to be defined.rb >>> 
+> ruby main.rb
 ```
 
 or alternatively you can copy and paste the commands in
